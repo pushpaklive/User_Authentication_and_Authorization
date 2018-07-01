@@ -31,6 +31,28 @@ router.post('/register', function(req, res){
     })
 })
 
+//Phase 2 starts-making login api
+router.post('/login', (req, res) => {
+    let userData = req.body;
+    const user = new User(userData);
+
+    User.findOne({email : user.email}, (err, user) => {
+        if(err){
+            console.error("error in login : caused by : ",err)
+        }
+        else{
+            if(!user){
+                res.status(401).json("Invalid email")
+            }else if(user.password !== userData.password){
+                res.status(401).json("Invalid Password!")
+            }
+            else{
+                res.status(200).json(user)
+            }
+        }
+    })
+})
+
 //no need to add slash at starting as router automatically adds it in url
 /*router.get('api2',(req, res) => {
     res.send('Hi from Pushpak 8757856866!!!!!');
