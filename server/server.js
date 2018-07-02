@@ -1,6 +1,6 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-const api = require('./routes/api')
+const api = require('../server/routes/api')
 
 const port = 3000
 
