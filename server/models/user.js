@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 var userSchema = new Schema({
-    email:string,
-    password:string
+    email:String,
+    password:String
 })
 
 module.exports = mongoose.model('user', userSchema, 'users')

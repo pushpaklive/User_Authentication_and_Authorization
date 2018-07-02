@@ -26,7 +26,7 @@ router.post('/register', function(req, res){
             console.error("Error in registering user : "+err)
         }
         else{
-                res.status(200).json(newUserData)
+            res.status(200).json(newUserData)
         }
     })
 })
@@ -53,6 +53,69 @@ router.post('/login', (req, res) => {
     })
 })
 
+//Api for regular events - Phase 3 -11 
+router.get('/events', (req, res) => {
+    //Hard coding data - not taking it from mongodb collection
+    let events = [
+        { 
+            "_id":"1",
+            "name":"Pushpak-alpha-user",
+            "description":"Test Desc 1",
+            "date":"04-08-1993"
+        },
+        { 
+            "_id":"2",
+            "name":"Pushpak-2",
+            "description":"Test Desc 2",
+            "date":"08-08-1993"
+        },
+        { 
+            "_id":"3",
+            "name":"Pushpak-3",
+            "description":"Test Desc 3",
+            "date":"21-08-1998"
+        },
+        { 
+            "_id":"4",
+            "name":"Pushpak-4",
+            "description":"Test Desc 4",
+            "date":"21-08-1996"
+        }
+    ]
+    res.json(events);
+})
+
+//Api for special events - Phase 3 -11 
+router.get('/special', (req, res) => {
+    //Hard coding data - not taking it from mongodb collection
+    let events = [
+        { 
+            "_id":"1",
+            "name":"Pushpak-alpha-user-A",
+            "description":"Test Desc 1",
+            "date":"04-08-1993"
+        },
+        { 
+            "_id":"2",
+            "name":"Pushpak-2-B",
+            "description":"Test Desc 2",
+            "date":"08-08-1993"
+        },
+        { 
+            "_id":"3",
+            "name":"Pushpak-3-C",
+            "description":"Test Desc 3",
+            "date":"21-08-1998"
+        },
+        { 
+            "_id":"4",
+            "name":"Pushpak-4-D",
+            "description":"Test Desc 4",
+            "date":"21-08-1996"
+        }
+    ]
+    res.json(events);
+})
 //no need to add slash at starting as router automatically adds it in url
 /*router.get('api2',(req, res) => {
     res.send('Hi from Pushpak 8757856866!!!!!');
