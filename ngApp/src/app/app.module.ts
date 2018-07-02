@@ -6,7 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
 import { SpecialEventsComponent } from './special-events/special-events.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +14,11 @@ import { RegistrationComponent } from './registration/registration.component';
     RegisterComponent,
     LoginComponent,
     EventsComponent,
-    SpecialEventsComponent,
-    RegistrationComponent
+    SpecialEventsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
